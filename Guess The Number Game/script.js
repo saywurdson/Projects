@@ -58,8 +58,8 @@ function resetResultContent(){document.getElementById("result").innerHTML = "";}
  * Return a random number between 1 and 100
  */
 function getRandomNumber(){
-  let randomNumber = Math.random();
-  let wholeNumber = Math.floor(randomNumber * 100) + 1;
+  let randomNumber = Math.random(); // Gives you a number between 0 - 0.999
+  let wholeNumber = Math.floor(randomNumber * 100) + 1; // Modifies Math.random to give a number between 0 - 100
   return wholeNumber;
 }
 
@@ -102,29 +102,29 @@ function getDialog(dialogType, text){
   return dialog;
 }
 
+/**
+   * Retrieve the dialog using the getDialog() function if guess is correct
+   */
 function showYouWon(){
   const text = "Awesome job, you got it!"
-  /**
-   * Retrieve the dialog using the getDialog() function
-   */
   let dialog = getDialog('won', text)
   document.getElementById("result").innerHTML = dialog;
 }
 
+/**
+   * Retrieve the dialog using the getDialog() function and save it to variable called dialog if guess is too high
+   */
 function showNumberAbove(){
   const text = "Your guess is too high!"
-  /**
-   * Retrieve the dialog using the getDialog() function and save it to variable called dialog
-   */
   let dialog = getDialog('warning', text)
   document.getElementById("result").innerHTML = dialog;
 }
 
+ /**
+   * Retrieve the dialog using the getDialog() function and save it to variable called dialog if guess is too low
+   */
 function showNumberBelow(){
   const text = "Your guess is too low!"
-  /**
-   * Retrieve the dialog using the getDialog() function and save it to variable called dialog
-   */
   let dialog = getDialog('warning', text)
   document.getElementById("result").innerHTML = dialog;
 }
