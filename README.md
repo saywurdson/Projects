@@ -1,2 +1,2 @@
 # Projects
- Random Projects
+ Random code-along Projects
