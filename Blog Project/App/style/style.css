@@ -7,7 +7,65 @@ body {
     text-decoration: none;
 }
 
+header {
+    min-height: 350px;
+    background-color: aqua;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/banner.jpeg);
+    background-size: cover;
+    position: relative;
+}
 
+header > * { /* this is to get the tint at the top*/
+    z-index: 10;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    background-image: url(../assets/profile.png);
+    background-size: cover;
+}
+
+.profile-name {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.subtext {
+    margin-top: 8px;
+}
+
+.main {
+    background-color: blanchedalmond;
+    height: 100px;
+    margin-top: 32px;
+    justify-content: center;
+}
+
+.main-container {
+    max-width: 750px;
+    min-width: 600px;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
 
 footer {
     min-height: 100px;
