@@ -9,7 +9,6 @@ body {
 
 header {
     min-height: 350px;
-    background-color: white;
     color: white;
     display: flex;
     flex-direction: column;
@@ -21,11 +20,15 @@ header {
     position: relative;
 }
 
+.home-page header, .new-post-page header {
+    background-image: url(/assets/banner.jpeg);
+}
+
 header > * { /* this is to get the tint at the top*/
     z-index: 10;
 }
 
-header::before {
+header::after {
     content: "";
     position: absolute;
     top: 0;
@@ -44,7 +47,7 @@ header::before {
     background-size: cover;
 }
 
-.profile-name {
+.profile-name, title {
     font-size: 3em;
     font-weight: bold;
 }
@@ -99,7 +102,6 @@ footer {
 .post-image {
     flex-basis: 40%;
     background-color: aquamarine;
-    background-image: url(https://images.unsplash.com/photo-1589021111330-953704d34989?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
     background-size: cover;
     background-position: center;
 }
@@ -163,4 +165,8 @@ footer {
     border: 1px solid #333;
     border-radius: 5px;
     padding: 5px 8px;
+}
+
+a.post-link {
+    text-decoration: none;
 }
