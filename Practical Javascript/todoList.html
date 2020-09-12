@@ -27,6 +27,32 @@
         deleteTodo: function(position) {
           this.todos.splice(position, 1);
           this.displayTodos;
+        },
+
+        toggleAll: function() {
+          var totalTodos = this.todos.length;
+          var completedTodos = 0;
+
+          // Get the number of completed todos
+          for (var i = 0; i < totalTodos; i++) {
+            if (this.todos[i].completed === true) {
+              completedTodos++;
+            }
+          }
+
+          // If everything is true, make everything false,
+          // else, make everything true
+          if (completedTodos === totalTodos) {
+            for (var i = 0; i < totalTodos; i++) {
+              this.todos[i].completed = false;
+            }
+          } else {
+            for (var i = 0; i < totalTodos; i++) {
+              this.todos[i].completed = true;
+            }
+          }
+
+          this.displayTodos();
         }
       };
     </script>
