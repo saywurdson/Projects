@@ -4,13 +4,30 @@
   <head>
     <title>Todo List Project</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
   </head>
   <body>
     <h1>Todo List</h1>
 
+    <!-- Old "event listener" way of manipulating the DOM
     <button id="displayTodosButton">Display Todos</button>
-    <button id="toggleAllButton">Toggle All</button>
+    <button id="toggleAllButton">Toggle All</button> -->
     
+    <div>
+      <button onclick="handlers.displayTodos()">Display Todos</button>
+      <button onclick="handlers.toggleAll()">Toggle All</button>
+    </div>
+
+    <div>
+      <button onclick="handlers.addTodo()">Add</button>
+      <input id="addTodoTextInput" type="text">
+    </div>
+
+    <div>
+      <button onclick="handlers.changeTodo()">Change Todo</button>
+      <input id="changeTodoPositionInput" type="number">
+      <input id="changeTodoTextInput" type="text">
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

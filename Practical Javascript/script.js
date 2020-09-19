@@ -65,7 +65,8 @@ var todoList = {
   }
 };
 
-var displayTodosButton = document.getElementById('displayTodosButton');
+// Old way of manipulating the DOM
+/* var displayTodosButton = document.getElementById('displayTodosButton');
 var toggleAllButton = document.getElementById('toggleAllButton');
 
 displayTodosButton.addEventListener('click', function() {
@@ -74,4 +75,22 @@ displayTodosButton.addEventListener('click', function() {
 
 toggleAllButton.addEventListener('click', function() {
   todoList.toggleAll();
-});
+}); */
+
+// object to bridge functions to HTML file
+var handlers = {
+  displayTodos: function() {
+    todoList.displayTodos();
+  },
+  toggleAll: function () {
+    todoList.toggleAll();
+  },
+  addTodo: function () {
+    var addTodoTextInput = document.getElementById('addTodoTextInput');
+    todoList.addTodo(addTodoText.value);
+    addTodoTextInput.value = '';  
+  },
+  changeTodo: function() {
+    var changeTodoPositionInput = document.getElementById('changeTodoPositionInput')
+  }
+};
