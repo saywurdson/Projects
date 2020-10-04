@@ -8,11 +8,12 @@
   <title>Your Age In Days</title>
 
   <style>
-
     .container-1 {
       border: 1px solid black;
+      margin: 0 auto;
+      width: 75%;
+      text-align: center;
     }
-
     .flex-box-container-1 {
       display: flex;
       border: 1px solid black;
@@ -21,35 +22,47 @@
       flex-direction: row;
       justify-content: space-around;
     }
-
     .flex-box-container-1 div {
       display: flex;
-      padding: 1-px;
+      padding: 10px;
       border: 1px solid black;
       align-items: center;
     }
-
   </style>
+
+  <script>
+    function ageInDays() {
+      var birthYear = prompt('What Year Were You Born?');
+      var theAgeInDays = (2020 - birthYear) * 365;
+      var h1 = document.createElement('h1');
+      var textAnswer = document.createTextNode('You are ' + theAgeInDays + ' days old');
+      h1.setAttribute('id', "ageInDays");
+      h1.appendChild(textAnswer);
+      document.getElementById('flex-box-result').appendChild(h1);
+    }
+    function reset() {
+      document.getElementById('ageInDays').remove();
+    }
+  </script>
 </head>
 
 <body>
   <div class="container-1">
     <h2>Your Age In Days</h2>
 
-    <div class="flex-box-container-1"></div>
+    <div class="flex-box-container-1">
       <div>
         <button class="btn btn-primary" onclick="ageInDays()">Click Me</button>
       </div>
 
       <div>
-        <button class="btn btn-danger">Reset</button>
+        <button class="btn btn-danger" onclick="reset()">Reset</button>
       </div>
+    </div>
 
-      <div class="flex-box-container-1">
-        <div id="flex-box-result"></div>
-      </div>
+    <div class="flex-box-container-1">
+      <div id="flex-box-result"></div>
+    </div>
   </div>
-
-  <script src="/Users/Me/Documents/GitHub/Projects/Your Age In Days/script.js"></script>
 </body>
 </html>
