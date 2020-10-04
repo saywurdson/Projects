@@ -22,12 +22,18 @@
       padding: 10px;
       flex-wrap: wrap;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-evenly;
     }
     
     .flex-box-rps img:hover {
       box-shadow: 0px 10px 50px rgba(37, 50, 233, 1);
     }
+
+    .reset-button {
+      text-align: right;
+      padding: 20px;
+    }
+
   </style>
 
   <script>
@@ -93,6 +99,10 @@
       document.getElementById('flex-box-rps-div').appendChild(messageDiv);
       document.getElementById('flex-box-rps-div').appendChild(botDiv);
     }
+
+    function reset() {
+      window.location.reload();
+    }
   </script>
   
 </head>
@@ -101,10 +111,14 @@
   <div class="container-1">
     <h2>Rock, Paper, Scissors!</h2>
     <div class="flex-box-rps" id="flex-box-rps-div">
-      <img id="rock" src="" height=150 width=150 alt="" onclick="rpsGame(this)">
-      <img id="paper" src="" height=150 width=150 alt="" onclick="rpsGame(this)">
-      <img id="scissors" src="" height=150 width=150 alt="" onclick="rpsGame(this)">
+      <img id="rock" src="http://images.clipartpanda.com/rock-clipart-ATbjMgapc.svg" height=150 width=150 alt="" onclick="rpsGame(this)">
+      <img id="paper" src="http://images.clipartpanda.com/paper-clip-art-niEBBqMiA.svg" height=150 width=150 alt="" onclick="rpsGame(this)">
+      <img id="scissors" src="http://images.clipartpanda.com/scissors-clip-art-scissors-clip-art-5.jpg" height=150 width=150 alt="" onclick="rpsGame(this)">
     </div>
+    <div class="reset-button">
+      <div>
+        <button class="btn btn-danger" onclick="reset()">Reset</button>
+      </div>
   </div>  
 </body>
 </html>
