@@ -106,15 +106,5 @@ body {
 }
 
 .tweets-list {
-  height: 500px;
   margin: 20px;
-  background-color: brown;
-}
-
-.tweet-container {
-  display: flex;
-  flex-direction: column;
-  height: 100px;
-  background-color: white;
-  margin: 10px;
 }
