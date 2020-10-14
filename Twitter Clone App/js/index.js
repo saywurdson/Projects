@@ -1,10 +1,25 @@
 const URL = "http://localhost:3000/tweets";
 
+
+const onEnter = (e) => { // use keyboard event to call getTwitterData function
+  if(e.key == "Enter") {
+    getTwitterData();
+  }
+}
 /**
- * Retrive Twitter Data from API
+ * Retrieve Twitter Data from API
  */
 const getTwitterData = () => {
+  const query = document.getElementById('user-search-input').nodeValue; // grab the information fromm the search
+  if(!query) return; // return nothing is the search is blank
+  const encodedQuery = encodeURIComponent(query); // allows you to use characters like # in your search
+  const fullUrl = `${URL}?q=${encodedQuery}&count=10`; // builds URL based on search
 
+  fetch(fullUrl).then((response) => {
+    return response.json();
+  }).then((data) => {
+
+  })
 }
 
 /**
